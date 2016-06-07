@@ -1,0 +1,19 @@
+1: package com.zhengxin.j2se.io;//: io/BasicFileOutput.java
+2: 
+3: import java.io.*;
+4: 
+5: public class BasicFileOutput {
+6:     static String file = "E:\\IntelliJ\\helloworld\\src\\main\\java\\com\\zhengxin\\j2se\\io\\BasicFileOutput.out";
+7: 
+8:     public static void main(String[] args) throws IOException {
+9:         BufferedReader in = new BufferedReader(new StringReader(BufferedInputFile.read("E:\\IntelliJ\\helloworld\\src\\main\\java\\com\\zhengxin\\j2se\\io\\BasicFileOutput.java")));
+10:         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+11:         int lineCount = 1;
+12:         String s;
+13:         while ((s = in.readLine()) != null)
+14:             out.println(lineCount++ + ": " + s);
+15:         out.close();
+16:         // Show the stored file:
+17:         System.out.println(BufferedInputFile.read(file));
+18:     }
+19: } /* (Execute to see output) *///:~
