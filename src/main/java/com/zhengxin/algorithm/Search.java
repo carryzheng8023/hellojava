@@ -9,18 +9,6 @@ import static com.zhengxin.j2se.net.mindview.util.Print.print;
  */
 public class Search {
 
-    public static void main(String[] a){
-
-        List<Integer> numbers = Arrays.asList(1,5,7,7,8);
-
-        print("数组：" + numbers);
-        print("5是否在数组中：" + Search.binarySearch(numbers, 5));
-        print("10是否在数组中：" + Search.binarySearch(numbers, 10));
-
-
-    }
-
-
     public static boolean binarySearch(final List<Integer> numbers, final Integer value){
 
         if(numbers == null || numbers.isEmpty())
