@@ -1,21 +1,7 @@
 package com.zhengxin;
 
 import com.google.gson.Gson;
-import com.zhengxin.j2se.containers.RandomBounds;
-import com.zhengxin.j2se.enumerated.VendingMachine;
-import com.zhengxin.j2se.holding.IterableClass;
-import com.zhengxin.j2se.io.*;
-import com.zhengxin.j2se.net.mindview.util.Null;
-import com.zhengxin.j2se.typeinfo.ShowMethods;
 
-import java.io.*;
-import java.math.BigDecimal;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,12 +9,13 @@ import java.util.regex.Pattern;
 import static com.zhengxin.j2se.net.mindview.util.Print.print;
 
 
-
 /**
  * Hello world!
  */
 public class App {
     public static void main(String[] args) throws Exception {
+
+        print();
 
 //        Path listing = Paths.get("E:\\doc\\服务\\1-资源池建设\\服务者信息");
 //        System.out.println("File name [" + listing.getFileName() + "]");
@@ -205,11 +192,9 @@ public class App {
 //        e.put("url", "https://www.baidu.com?a=1&b=2");
 
 
-
-
 //        System.out.println(e.toString());
 //
-//        Gson gson = new Gson();
+        Gson gson = new Gson();
 //
 //        String json = gson.toJson(e);
 //        System.out.println(json);
@@ -230,6 +215,65 @@ public class App {
 
 
 //        print(System.currentTimeMillis());
+//
+//        try {
+//            Date date = new SimpleDateFormat("yyyy-MM-dd").parse("2016-06-05");
+//            print(date.getTime());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+//        String iloveyou = "ILOVEYOU";
+//        char[] chars = iloveyou.toCharArray();
+//
+//        for (char c : chars){
+//            print(Integer.toBinaryString(c));
+//            print((int)c);
+//        }
+
+//        JsonBean jsonBean = new JsonBean();
+//        jsonBean.setName("zhengxin");
+//        LinkedList<String> hobbies = new LinkedList<>();
+//        hobbies.add("羽毛球");
+//        hobbies.add("篮球");
+//        hobbies.add(0,"游泳");
+//        jsonBean.setHobbies(hobbies);
+//
+//        String json = gson.toJson(jsonBean);
+//
+//        print(json);
+//
+//        JsonBean jb = gson.fromJson(json,JsonBean.class);
+//
+//        hobbies = jb.getHobbies();
+//
+//        print(hobbies.getClass());
+
+        Long msgId = UUID.randomUUID().getLeastSignificantBits();
+        print(msgId);
+        if (msgId < 0) {
+            msgId = msgId & 0X7FFFFFFFFFFFFFFFL;
+        }
+
+        print(msgId);
+
+
+        print(hexString2binaryString("7FFFFFFFFFFFFFFF"));
+
+
+    }
+
+    public static String hexString2binaryString(String hexString) {
+        if (hexString == null || hexString.length() % 2 != 0)
+            return null;
+        String bString = "", tmp;
+        for (int i = 0; i < hexString.length(); i++) {
+            tmp = "0000"
+                    + Integer.toBinaryString(Integer.parseInt(hexString
+                    .substring(i, i + 1), 16));
+            bString += tmp.substring(tmp.length() - 4);
+        }
+        return bString;
     }
 
 

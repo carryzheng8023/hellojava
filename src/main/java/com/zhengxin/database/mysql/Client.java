@@ -1,4 +1,4 @@
-package com.zhengxin.database;
+package com.zhengxin.database.mysql;
 
 
 /**
