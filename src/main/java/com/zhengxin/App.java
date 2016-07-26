@@ -1,12 +1,16 @@
 package com.zhengxin;
 
 import com.google.gson.Gson;
+import com.zhengxin.algorithm.alg4.Insertion;
+import com.zhengxin.algorithm.alg4.Selection;
+import com.zhengxin.algorithm.alg4.utils.In;
 
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.zhengxin.j2se.net.mindview.util.Print.print;
+import static com.zhengxin.j2se.net.mindview.util.Print.printnb;
 
 
 /**
@@ -249,18 +253,121 @@ public class App {
 //
 //        print(hobbies.getClass());
 
-        Long msgId = UUID.randomUUID().getLeastSignificantBits();
-        print(msgId);
-        if (msgId < 0) {
-            msgId = msgId & 0X7FFFFFFFFFFFFFFFL;
+//        Long msgId = UUID.randomUUID().getLeastSignificantBits();
+//        print(msgId);
+//        if (msgId < 0) {
+//            msgId = msgId & 0X7FFFFFFFFFFFFFFFL;
+//        }
+//
+//        print(msgId);
+//
+//
+//        print(hexString2binaryString("7FFFFFFFFFFFFFFF"));
+
+
+//        CommentContentBean c1 = new CommentContentBean("c_1", "内容1", null);
+//        CommentContentBean c2 = new CommentContentBean("c_2", "内容2", c1);
+//
+//        String json1 = gson.toJson(c1);
+//        String json2 = gson.toJson(c2);
+//        print(json1);
+//        print(json2);
+//
+//        CommentContentBean fromC1 = gson.fromJson(json1, CommentContentBean.class);
+//        CommentContentBean fromC2 = gson.fromJson(json2, CommentContentBean.class);
+//        print(fromC1);
+//        print(fromC2);
+
+
+//        Integer[] a = new Integer[]{1, 6, 4, 7, 23, 5};
+//        String[] a = new String[]{"S", "O", "R", "T","E","X","A","M","P","L","E"};
+//
+//        for (String i : a)
+//            printnb(i + "\t");
+//
+//        Insertion.sort(a);
+//        print();
+//
+//        for (String i : a)
+//            printnb(i + "\t");
+
+
+//        Integer i1 = 127;
+//        Integer i2 = 127;
+//        Integer i3 = 128;
+//        Integer i4 = 128;
+//        Integer i5 = -128;
+//        Integer i6 = -128;
+//        Integer i7 = -129;
+//        Integer i8 = -129;
+//        print("127" + (i1 == i2));
+//        print("128" + (i3 == i4));
+//        print("-128" + (i5 == i6));
+//        print("-129" + (i7 == i8));
+
+//        List<Integer> arrayList = new ArrayList<>();
+//        List<Integer> linkedList = new LinkedList<>();
+//
+//        for(int i=0; i<1000; i++){
+//            arrayList.add(i);
+//            linkedList.add(i);
+//        }
+//
+//        Long beginTime = System.currentTimeMillis();
+//        arrayList.add(0,-8);
+//        Long endTime = System.currentTimeMillis();
+//        print(endTime - beginTime);
+//
+//        beginTime = System.currentTimeMillis();
+//        linkedList.add(0,-8);
+//        endTime = System.currentTimeMillis();
+//        print(endTime - beginTime);
+
+//        A a1 = new A();
+//        A a2 = new A();
+//        a1.setAge(1);
+//        a2.setAge(129);
+//
+//        print(a1.getAge() == Constant.CARD_TRANSFER1);
+//        print(a1.getAge().equals(Constant.CARD_TRANSFER1));
+//        print(a2.getAge() == Constant.CARD_TRANSFER129);
+//        print(a2.getAge() == 129);
+//        print(a2.getAge().equals(Constant.CARD_TRANSFER129));
+
+
+//        Set<String> set = new HashSet<>();
+//        set.add(123456 + "");
+//        set.add(123456 + "");
+//
+//        print(set);
+
+//        print(f());
+
+//        try {
+//            throw new RuntimeException();
+//        }catch (Exception e){
+//            throw new RuntimeException();
+//        }
+
+//        A a = new A();
+//
+//        if(null != a)
+//            print("a != null");
+
+        print(App.class.getResource("/").getPath());
+
+
+    }
+
+    static int f(){
+        try{
+            throw new RuntimeException();
+
+        }catch (Exception e){
+            return 2;
+        }finally {
+            return 3;
         }
-
-        print(msgId);
-
-
-        print(hexString2binaryString("7FFFFFFFFFFFFFFF"));
-
-
     }
 
     public static String hexString2binaryString(String hexString) {
