@@ -22,7 +22,6 @@ public class JdbcUtil {
      * @throws SQLException
      * @Method: getConnection
      * @Description: 从数据库连接池中获取数据库连接对象
-     * @Anthor:孤傲苍狼
      */
     public static Connection getConnection() throws SQLException {
         return pool.getConnection();
@@ -35,7 +34,6 @@ public class JdbcUtil {
      * @Method: release
      * @Description: 释放资源，
      * 释放的资源包括Connection数据库连接对象，负责执行SQL命令的Statement对象，存储查询结果的ResultSet对象
-     * @Anthor:孤傲苍狼
      */
     public static void release(Connection conn, Statement st, ResultSet rs) {
         if (rs != null) {

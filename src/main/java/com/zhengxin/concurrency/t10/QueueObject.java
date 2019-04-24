@@ -1,0 +1,30 @@
+package com.zhengxin.concurrency.t10;
+
+/**
+ * @author zhengxin
+ * @date 2018-01-28 17:08:21
+ */
+public class QueueObject {
+
+    private boolean isNotified = false;
+
+    public synchronized void doWait() throws InterruptedException{
+
+        while (!isNotified){
+            this.wait();
+        }
+
+        this.isNotified = false;
+
+    }
+
+    public synchronized void doNotify(){
+        this.isNotified = true;
+        this.notify();
+    }
+
+    public boolean equals(Object o ){
+        return this == o;
+    }
+
+}

@@ -23,7 +23,7 @@ public class JdbcPool implements DataSource {
      * 使用LinkedList集合来存放数据库链接，
      * 由于要频繁读写List集合，所以这里使用LinkedList存储数据库连接比较合适
      */
-    private static LinkedList<Connection> listConnections = new LinkedList<Connection>();
+    private static LinkedList<Connection> listConnections = new LinkedList<>();
 
     static {
         //在静态代码块中加载db.properties数据库配置文件

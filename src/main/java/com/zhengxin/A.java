@@ -3,21 +3,23 @@ package com.zhengxin;
 /**
  * Created by 136931 on 2016/2/26.
  */
-public class A {
+public class A implements Cloneable{
 
     private String name;
     private Integer age;
     private String url;
+    private B b;
 
     public A(){}
 
-    public A(String name, Integer age, String url){
+    public A(String name, Integer age, String url, B b) {
         this.name = name;
         this.age = age;
-        this.url =url;
+        this.url = url;
+        this.b = b;
     }
 
-//    public void aMethod(){
+    //    public void aMethod(){
 //
 //        Inner inner = new Inner();
 //
@@ -27,9 +29,15 @@ public class A {
 //
 //    }
 
+
     @Override
-    public String toString(){
-        return "name: " + this.name + ",age: " + this.age + ",url: " + this.url;
+    public String toString() {
+        return "A{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", url='" + url + '\'' +
+                ", b=" + b +
+                '}';
     }
 
     public String getName() {
@@ -56,7 +64,21 @@ public class A {
         this.url = url;
     }
 
-//    class Inner implements Runnable{
+    public B getB() {
+        return b;
+    }
+
+    public void setB(B b) {
+        this.b = b;
+    }
+
+    @Override
+    protected A clone() throws CloneNotSupportedException {
+        return (A)super.clone();
+    }
+
+
+    //    class Inner implements Runnable{
 //
 //        public Inner(){}
 //

@@ -3,9 +3,9 @@ package com.zhengxin.pattern.proxy;
 /**
  * Created by 136931 on 2016/2/23.
  */
-public class ProxyObject extends AbstractObject {
+public class ProxyObject implements AbstractObject {
 
-    RealObject realObject = new RealObject();
+    private RealObject realObject = new RealObject();
 
     @Override
     public void operation() {
