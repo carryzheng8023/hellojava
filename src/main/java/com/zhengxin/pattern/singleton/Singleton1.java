@@ -8,7 +8,14 @@ public class Singleton1 {
 
     public static final Singleton1 INSTANCE = new Singleton1();
 
-    private Singleton1(){}
+
+    private Singleton1(){
+        System.out.println(Thread.currentThread().getName() + "\t" + "我是构造方法Singleton1");
+    }
+
+    public static Singleton1 getInstance(){
+        return INSTANCE;
+    }
 
     public void f(){
         System.out.println("Singleton1");

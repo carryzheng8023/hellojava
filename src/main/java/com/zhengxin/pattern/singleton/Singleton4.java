@@ -8,7 +8,9 @@ public class Singleton4 {
 
     private static Singleton4 instance;
 
-    private Singleton4(){}
+    private Singleton4(){
+        System.out.println(Thread.currentThread().getName() + "\t" + "我是构造方法Singleton4");
+    }
 
     public void f(){
         System.out.println("Singleton4");
@@ -16,13 +18,8 @@ public class Singleton4 {
 
     public static Singleton4 getInstance(){
         if(null == instance) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
             instance = new Singleton4();
+        }
 
         return instance;
     }

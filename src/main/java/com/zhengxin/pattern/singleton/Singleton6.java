@@ -6,9 +6,11 @@ package com.zhengxin.pattern.singleton;
  */
 public class Singleton6 {
 
-    private static Singleton6 instance;
+    private static volatile Singleton6 instance;
 
-    private Singleton6(){}
+    private Singleton6(){
+        System.out.println(Thread.currentThread().getName() + "\t" + "我是构造方法Singleton6");
+    }
 
     public static Singleton6 getInstance(){
 
