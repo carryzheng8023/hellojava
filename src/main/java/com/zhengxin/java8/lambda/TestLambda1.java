@@ -26,7 +26,10 @@ public class TestLambda1 {
 
 
     public void test2(){
-        Comparator<Integer> comparator = (x, y) -> Integer.compare(x, y);
+//        Comparator<Integer> comparator = (x, y) -> Integer.compare(x, y);
+//        Comparator<Integer> comparator = (Integer x, Integer y) -> Integer.compare(x, y);
+
+        Comparator<Integer> comparator = Integer::compare;
 
         TreeSet<Integer> ts = new TreeSet<>(comparator);
 

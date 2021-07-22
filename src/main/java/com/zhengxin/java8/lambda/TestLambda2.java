@@ -59,13 +59,14 @@ public class TestLambda2 {
         Runnable r = new Runnable() {
             @Override
             public void run() {
-                System.out.println("hello world" + num);
+                System.out.println(Thread.currentThread().getName() + "\thello world" + num);
             }
         };
 
         r.run();
 
-        Runnable r1 = () -> System.out.println("Hello Lambda");
+        Runnable r1 = () -> System.out.println(Thread.currentThread().getName() + "\tHello Lambda");
+
 
         r1.run();
 
